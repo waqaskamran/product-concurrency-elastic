@@ -1,0 +1,1388 @@
+2022-06-09 21:42:21,882 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33106 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 21:42:21,888 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 21:42:22,765 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 21:42:22,805 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 21:42:22,810 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 21:42:22,813 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 21:42:23,190 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 21:42:23,204 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 21:42:23,205 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 21:42:23,206 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 21:42:23,313 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 21:42:23,314 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1365 ms
+2022-06-09 21:42:24,506 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 21:42:24,517 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 21:42:24,531 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 3.374 seconds (JVM running for 9.284)
+2022-06-09 21:45:59,062 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 21:45:59,065 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 21:45:59,095 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 29 ms
+2022-06-09 21:45:59,619 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>0
+2022-06-09 21:45:59,639 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1310)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:99)
+	at com.elastic.fetch.service.ApplicationService.createQueueAndApplication(ApplicationService.java:57)
+	at com.elastic.fetch.controller.ApplicationLockController.createApplication(ApplicationLockController.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 21:46:11,449 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>0
+2022-06-09 21:46:11,455 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1310)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:99)
+	at com.elastic.fetch.service.ApplicationService.createQueueAndApplication(ApplicationService.java:57)
+	at com.elastic.fetch.controller.ApplicationLockController.createApplication(ApplicationLockController.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 21:46:15,920 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>0
+2022-06-09 21:46:15,921 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1310)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:99)
+	at com.elastic.fetch.service.ApplicationService.createQueueAndApplication(ApplicationService.java:57)
+	at com.elastic.fetch.controller.ApplicationLockController.createApplication(ApplicationLockController.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 21:48:37,415 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>0
+2022-06-09 21:48:37,467 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at java.base/java.util.Collections$UnmodifiableList.get(Collections.java:1310)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:99)
+	at com.elastic.fetch.service.ApplicationService.createQueueAndApplication(ApplicationService.java:57)
+	at com.elastic.fetch.controller.ApplicationLockController.createApplication(ApplicationLockController.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 21:51:01,639 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33195 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 21:51:01,642 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 21:51:02,321 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 21:51:02,361 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 21:51:02,367 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 21:51:02,371 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 21:51:02,807 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 21:51:02,816 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 21:51:02,816 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 21:51:02,817 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 21:51:02,963 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 21:51:02,963 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1279 ms
+2022-06-09 21:51:04,263 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 21:51:04,276 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 21:51:04,289 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 3.297 seconds (JVM running for 9.125)
+2022-06-09 21:51:18,652 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 21:51:18,653 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 21:51:18,655 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 21:51:26,613 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>1
+2022-06-09 21:51:26,698 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=EiElD4EBnz0EoJUXMlrv, applicationId=2347, queue=2370, assignee=4545, counter=1), indexId=EiElD4EBnz0EoJUXMlrv)
+2022-06-09 21:53:05,003 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>1
+2022-06-09 21:53:05,044 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=ESElD4EBnz0EoJUXGlpT, applicationId=2345, queue=2340, assignee=45001, counter=1), indexId=ESElD4EBnz0EoJUXGlpT)
+2022-06-09 21:53:05,113 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 21:53:05,151 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=ESElD4EBnz0EoJUXGlpT, applicationId=2345, queue=2340, assignee=45001, counter=1), indexId=ESElD4EBnz0EoJUXGlpT)
+2022-06-09 21:53:05,212 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] size...>1
+2022-06-09 21:53:05,232 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=ESElD4EBnz0EoJUXGlpT, applicationId=2345, queue=2340, assignee=45001, counter=1), indexId=ESElD4EBnz0EoJUXGlpT)
+2022-06-09 21:53:05,304 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>1
+2022-06-09 21:53:05,331 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=ESElD4EBnz0EoJUXGlpT, applicationId=2345, queue=2340, assignee=45001, counter=1), indexId=ESElD4EBnz0EoJUXGlpT)
+2022-06-09 21:53:05,404 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] size...>1
+2022-06-09 21:53:05,422 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 21:53:05,503 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>1
+2022-06-09 21:53:05,522 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 21:53:05,612 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 21:53:05,633 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 21:53:05,700 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] size...>1
+2022-06-09 21:53:05,717 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 21:53:05,806 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>1
+2022-06-09 21:53:05,820 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 21:53:05,894 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] size...>1
+2022-06-09 21:53:05,916 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=873889432, queue=8763810, assignee=45001, counter=1), indexId=GSEmD4EBnz0EoJUXMlqp)
+2022-06-09 22:06:36,786 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33357 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 22:06:36,789 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 22:06:37,364 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:06:37,404 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 22:06:37,409 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:06:37,412 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 22:06:37,825 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 22:06:37,835 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:06:37,836 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 22:06:37,837 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 22:06:37,984 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 22:06:37,985 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1153 ms
+2022-06-09 22:06:39,136 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:06:39,149 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 22:06:39,163 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 3.119 seconds (JVM running for 8.924)
+2022-06-09 22:07:43,113 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 22:07:43,114 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 22:07:43,115 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 22:07:43,356 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>1
+2022-06-09 22:07:43,356 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>1
+2022-06-09 22:07:43,356 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>1
+2022-06-09 22:07:43,375 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 22:07:43,431 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:07:43,433 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:07:43,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:07:43,439 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=93889432, queue=8763210, assignee=45001, counter=1), indexId=GCEmD4EBnz0EoJUXG1pY)
+2022-06-09 22:07:43,433 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=93889432, queue=8763210, assignee=45001, counter=1), indexId=GCEmD4EBnz0EoJUXG1pY)
+2022-06-09 22:07:43,439 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=93889432, queue=8763210, assignee=45001, counter=1), indexId=GCEmD4EBnz0EoJUXG1pY)
+2022-06-09 22:07:43,439 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=93889432, queue=8763210, assignee=45001, counter=1), indexId=GCEmD4EBnz0EoJUXG1pY)
+2022-06-09 22:07:43,487 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] size...>1
+2022-06-09 22:07:43,508 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:07:43,509 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:07:43,509 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=93889432, queue=8763210, assignee=45001, counter=1), indexId=GCEmD4EBnz0EoJUXG1pY)
+2022-06-09 22:07:43,586 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] size...>1
+2022-06-09 22:07:43,605 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] Thread Id..60
+2022-06-09 22:07:43,606 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] Thread name..http-nio-6666-exec-10
+2022-06-09 22:07:43,609 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-10] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=23889432, queue=2763210, assignee=45001, counter=1), indexId=FyEmD4EBnz0EoJUXB1pJ)
+2022-06-09 22:07:43,680 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>1
+2022-06-09 22:07:43,703 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:07:43,704 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:07:43,705 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=23889432, queue=2763210, assignee=45001, counter=1), indexId=FyEmD4EBnz0EoJUXB1pJ)
+2022-06-09 22:07:43,768 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 22:07:43,778 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:07:43,779 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:07:43,779 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=23889432, queue=2763210, assignee=45001, counter=1), indexId=FyEmD4EBnz0EoJUXB1pJ)
+2022-06-09 22:07:43,878 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] size...>1
+2022-06-09 22:07:43,893 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:07:43,894 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:07:43,895 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=23889432, queue=2763210, assignee=45001, counter=1), indexId=FyEmD4EBnz0EoJUXB1pJ)
+2022-06-09 22:07:43,975 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] size...>1
+2022-06-09 22:07:44,000 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:07:44,000 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:07:44,001 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=23889432, queue=2763210, assignee=45001, counter=1), indexId=FyEmD4EBnz0EoJUXB1pJ)
+2022-06-09 22:20:32,772 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33491 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 22:20:32,775 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 22:20:33,315 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:20:33,354 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 35 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 22:20:33,359 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:20:33,362 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 22:20:33,732 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 22:20:33,740 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:20:33,740 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 22:20:33,741 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 22:20:33,840 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 22:20:33,840 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1022 ms
+2022-06-09 22:20:34,922 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:20:34,933 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 22:20:34,947 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 2.629 seconds (JVM running for 14.993)
+2022-06-09 22:24:36,704 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 22:24:36,707 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 22:24:36,709 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 2 ms
+2022-06-09 22:24:37,103 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>6
+2022-06-09 22:24:37,103 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>6
+2022-06-09 22:24:37,103 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>6
+2022-06-09 22:24:37,103 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] size...>6
+2022-06-09 22:24:37,103 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>6
+2022-06-09 22:24:37,164 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] size...>6
+2022-06-09 22:24:37,191 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,193 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,202 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,203 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,193 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,204 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,253 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] size...>6
+2022-06-09 22:24:37,264 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,264 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,264 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,281 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,283 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,291 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,291 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,291 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,310 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,321 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,322 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,323 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,324 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,325 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,328 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,335 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,336 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,336 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,336 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,336 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,336 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,346 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>6
+2022-06-09 22:24:37,351 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,351 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,352 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,352 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,353 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,353 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,355 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,355 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,355 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,353 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,355 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,356 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,363 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,363 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,363 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,364 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,364 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,364 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,365 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,367 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,369 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,376 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,376 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,377 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,389 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread Id..56
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,391 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] Thread name..http-nio-6666-exec-6
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..54
+2022-06-09 22:24:37,392 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,390 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,391 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,391 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,392 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-6] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,393 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,399 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,399 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,399 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,415 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..55
+2022-06-09 22:24:37,415 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..51
+2022-06-09 22:24:37,415 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..52
+2022-06-09 22:24:37,415 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,419 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 22:24:37,416 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 22:24:37,416 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 22:24:37,419 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,420 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,420 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,420 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,420 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,426 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,426 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,428 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,438 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>6
+2022-06-09 22:24:37,446 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread Id..57
+2022-06-09 22:24:37,446 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] Thread name..http-nio-6666-exec-7
+2022-06-09 22:24:37,446 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,461 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,461 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,462 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,462 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,462 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,462 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,482 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,482 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,483 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,483 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,485 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,485 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,498 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,498 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..58
+2022-06-09 22:24:37,499 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 22:24:37,499 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,499 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,499 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,523 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,525 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,525 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,548 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,549 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,549 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,556 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>6
+2022-06-09 22:24:37,565 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..59
+2022-06-09 22:24:37,566 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 22:24:37,566 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:24:37,575 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,576 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,576 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2309432, queue=23210, assignee=45001, counter=1), indexId=FiElD4EBnz0EoJUX7Vos)
+2022-06-09 22:24:37,592 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,594 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,594 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=2322, queue=2329, assignee=45001, counter=1), indexId=FCElD4EBnz0EoJUXZVqJ)
+2022-06-09 22:24:37,610 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,610 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,610 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=230908, queue=23290, assignee=45001, counter=1), indexId=FSElD4EBnz0EoJUXfFp1)
+2022-06-09 22:24:37,622 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,622 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,622 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=312123445, queue=11112, assignee=45001, counter=1), indexId=HCH2GYEBnz0EoJUXnVpa)
+2022-06-09 22:24:37,636 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,636 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,636 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=342343666, queue=1993459999, assignee=45001, counter=1), indexId=SSGLSYEBnz0EoJUXhlqO)
+2022-06-09 22:24:37,649 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread Id..53
+2022-06-09 22:24:37,650 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] Thread name..http-nio-6666-exec-3
+2022-06-09 22:24:37,650 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=66654, queue=rana, assignee=45001, counter=1), indexId=abd)
+2022-06-09 22:25:41,224 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>0
+2022-06-09 22:25:41,317 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] size...>0
+2022-06-09 22:25:41,411 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>0
+2022-06-09 22:25:41,516 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>0
+2022-06-09 22:25:41,614 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>0
+2022-06-09 22:25:41,715 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>0
+2022-06-09 22:25:41,812 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] size...>0
+2022-06-09 22:25:41,911 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>0
+2022-06-09 22:25:42,021 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>0
+2022-06-09 22:25:42,112 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>0
+2022-06-09 22:27:19,014 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33611 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 22:27:19,017 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 22:27:19,564 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:27:19,607 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 22:27:19,613 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:27:19,616 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 22:27:19,988 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 22:27:19,996 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:27:19,997 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 22:27:19,997 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 22:27:20,104 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 22:27:20,104 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1039 ms
+2022-06-09 22:27:21,213 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:27:21,225 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 22:27:21,238 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 2.672 seconds (JVM running for 10.801)
+2022-06-09 22:29:55,173 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 22:29:55,174 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 22:29:55,175 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 22:29:55,208 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,221 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,324 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,427 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,525 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-5] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,625 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-6] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,721 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,825 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-8] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:55,926 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:29:56,024 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-10] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:45,622 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:45,729 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:45,827 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:45,930 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,028 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-5] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,127 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-6] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,225 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,329 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-8] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,427 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:30:46,525 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-6666-exec-10] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: org.springframework.http.ResponseEntity<java.util.List<com.elastic.fetch.entity.ApplicationResponseDTO>> com.elastic.fetch.controller.ApplicationLockController.searchApplication(com.elastic.fetch.dto.ApplicationRequestDTO)]
+2022-06-09 22:32:07,391 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33667 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 22:32:07,395 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 22:32:07,961 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:32:08,005 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 22:32:08,010 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:32:08,013 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 22:32:08,500 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 22:32:08,508 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:32:08,509 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 22:32:08,509 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 22:32:08,660 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 22:32:08,661 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1217 ms
+2022-06-09 22:32:09,762 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:32:09,773 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 22:32:09,786 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 2.878 seconds (JVM running for 15.148)
+2022-06-09 22:33:39,808 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 22:33:39,809 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 22:33:39,810 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 22:33:39,830 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-1] searching app...
+2022-06-09 22:33:39,846 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:39,859 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-2] searching app...
+2022-06-09 22:33:39,860 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:39,959 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-3] searching app...
+2022-06-09 22:33:39,963 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,060 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-4] searching app...
+2022-06-09 22:33:40,062 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,156 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-5] searching app...
+2022-06-09 22:33:40,157 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,257 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-6] searching app...
+2022-06-09 22:33:40,260 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,355 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-7] searching app...
+2022-06-09 22:33:40,356 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,457 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-8] searching app...
+2022-06-09 22:33:40,458 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,560 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-9] searching app...
+2022-06-09 22:33:40,563 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:33:40,657 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-10] searching app...
+2022-06-09 22:33:40,658 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [/elastic] threw exception [Request processing failed; nested exception is co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'] with root cause
+co.elastic.clients.util.MissingRequiredPropertyException: Missing required property 'FieldValue.<variant value>'
+	at co.elastic.clients.util.ApiTypeHelper.requireNonNull(ApiTypeHelper.java:76)
+	at co.elastic.clients.elasticsearch._types.FieldValue.<init>(FieldValue.java:112)
+	at co.elastic.clients.elasticsearch._types.FieldValue.of(FieldValue.java:64)
+	at co.elastic.clients.elasticsearch._types.query_dsl.TermQuery$Builder.value(TermQuery.java:161)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$0(ApplicationService.java:103)
+	at co.elastic.clients.elasticsearch._types.query_dsl.Query$Builder.term(Query.java:1715)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$1(ApplicationService.java:101)
+	at co.elastic.clients.elasticsearch.core.SearchRequest$Builder.query(SearchRequest.java:1732)
+	at com.elastic.fetch.service.ApplicationService.lambda$searchByCriteria$2(ApplicationService.java:100)
+	at co.elastic.clients.elasticsearch.ElasticsearchClient.search(ElasticsearchClient.java:1519)
+	at com.elastic.fetch.service.ApplicationService.searchByCriteria(ApplicationService.java:98)
+	at com.elastic.fetch.controller.ApplicationLockController.searchApplication(ApplicationLockController.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-06-09 22:34:45,776 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 33709 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 22:34:45,779 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 22:34:46,316 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:34:46,354 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 34 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 22:34:46,359 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 22:34:46,362 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 22:34:46,751 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 22:34:46,759 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:34:46,759 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 22:34:46,760 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 22:34:46,860 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 22:34:46,861 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1042 ms
+2022-06-09 22:34:47,930 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 22:34:47,942 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 22:34:47,954 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 2.596 seconds (JVM running for 14.087)
+2022-06-09 22:35:20,948 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 22:35:20,949 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 22:35:20,951 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 22:35:20,970 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-1] searching app...
+2022-06-09 22:35:20,996 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-2] searching app...
+2022-06-09 22:35:21,098 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-3] searching app...
+2022-06-09 22:35:21,158 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>10
+2022-06-09 22:35:21,158 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>10
+2022-06-09 22:35:21,158 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>10
+2022-06-09 22:35:21,198 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-4] searching app...
+2022-06-09 22:35:21,210 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>10
+2022-06-09 22:35:21,304 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-9] searching app...
+2022-06-09 22:35:21,317 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>10
+2022-06-09 22:35:21,403 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-3] searching app...
+2022-06-09 22:35:21,423 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-3] size...>10
+2022-06-09 22:35:21,501 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-1] searching app...
+2022-06-09 22:35:21,514 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>10
+2022-06-09 22:35:21,600 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-7] searching app...
+2022-06-09 22:35:21,609 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-7] size...>10
+2022-06-09 22:35:21,699 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-4] searching app...
+2022-06-09 22:35:21,709 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>10
+2022-06-09 22:35:21,797 INFO com.elastic.fetch.controller.ApplicationLockController [http-nio-6666-exec-9] searching app...
+2022-06-09 22:35:21,812 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>10
+2022-06-09 23:03:10,407 INFO org.springframework.boot.StartupInfoLogger [main] Starting FetchApplication using Java 11.0.15.1 on RanaWaqas.local with PID 34108 (/Users/ranawaqas/Downloads/fetch-java-elastic/target/classes started by ranawaqas in /Users/ranawaqas/Downloads/fetch-java-elastic)
+2022-06-09 23:03:10,413 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-09 23:03:11,637 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-06-09 23:03:11,699 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 56 ms. Found 1 Elasticsearch repository interfaces.
+2022-06-09 23:03:11,707 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-06-09 23:03:11,712 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 4 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-06-09 23:03:12,207 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 6666 (http)
+2022-06-09 23:03:12,215 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-6666"]
+2022-06-09 23:03:12,216 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-09 23:03:12,216 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-09 23:03:12,381 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-09 23:03:12,382 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1762 ms
+2022-06-09 23:03:13,712 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-6666"]
+2022-06-09 23:03:13,737 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 6666 (http) with context path '/elastic'
+2022-06-09 23:03:13,766 INFO org.springframework.boot.StartupInfoLogger [main] Started FetchApplication in 4.732 seconds (JVM running for 10.805)
+2022-06-09 23:03:33,201 INFO org.apache.juli.logging.DirectJDKLog [http-nio-6666-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-09 23:03:33,202 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-09 23:03:33,203 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-6666-exec-1] Completed initialization in 1 ms
+2022-06-09 23:03:33,443 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] size...>1
+2022-06-09 23:03:33,506 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread Id..53
+2022-06-09 23:03:33,507 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] Thread name..http-nio-6666-exec-1
+2022-06-09 23:03:33,507 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-1] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=12, queue=1993459999, assignee=45001, counter=1), indexId=SiG4SYEBnz0EoJUXslow)
+2022-06-09 23:05:06,675 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>1
+2022-06-09 23:05:06,721 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..54
+2022-06-09 23:05:06,722 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 23:05:06,723 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=13, queue=1993459999, assignee=45001, counter=1), indexId=SyG4SYEBnz0EoJUXv1o_)
+2022-06-09 23:05:06,777 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 23:05:06,878 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] size...>1
+2022-06-09 23:05:06,907 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..56
+2022-06-09 23:05:06,907 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 23:05:06,908 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=13, queue=1993459999, assignee=45001, counter=1), indexId=SyG4SYEBnz0EoJUXv1o_)
+2022-06-09 23:05:06,928 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..57
+2022-06-09 23:05:06,928 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 23:05:06,928 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:06,965 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>1
+2022-06-09 23:05:07,060 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..60
+2022-06-09 23:05:07,061 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 23:05:07,061 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,065 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>1
+2022-06-09 23:05:07,072 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..61
+2022-06-09 23:05:07,072 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 23:05:07,073 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,171 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] size...>1
+2022-06-09 23:05:07,191 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread Id..54
+2022-06-09 23:05:07,191 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] Thread name..http-nio-6666-exec-2
+2022-06-09 23:05:07,191 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-2] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,266 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] size...>1
+2022-06-09 23:05:07,271 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread Id..56
+2022-06-09 23:05:07,272 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] Thread name..http-nio-6666-exec-4
+2022-06-09 23:05:07,272 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-4] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,366 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] size...>1
+2022-06-09 23:05:07,370 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread Id..57
+2022-06-09 23:05:07,370 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] Thread name..http-nio-6666-exec-5
+2022-06-09 23:05:07,370 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-5] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,466 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] size...>1
+2022-06-09 23:05:07,476 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread Id..60
+2022-06-09 23:05:07,476 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] Thread name..http-nio-6666-exec-8
+2022-06-09 23:05:07,476 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-8] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
+2022-06-09 23:05:07,571 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] size...>1
+2022-06-09 23:05:07,577 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread Id..61
+2022-06-09 23:05:07,577 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] Thread name..http-nio-6666-exec-9
+2022-06-09 23:05:07,578 INFO com.elastic.fetch.service.ApplicationService [http-nio-6666-exec-9] updated....ApplicationResponseDTO(application=Application(id=null, applicationId=14, queue=1993459999, assignee=45001, counter=1), indexId=TCG4SYEBnz0EoJUX0Fo_)
